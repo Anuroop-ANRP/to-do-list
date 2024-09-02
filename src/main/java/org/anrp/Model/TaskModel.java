@@ -35,6 +35,11 @@ public class TaskModel {
      */
     String taskDescription;
 
+    public TaskModel() {
+
+    }
+
+
     public int getTaskNumber() {
         return taskNumber;
     }
@@ -67,10 +72,9 @@ public class TaskModel {
         this.taskUpdatedDate = taskUpdatedDate;
     }
 
-    public TaskModel(String taskDescription, String taskTitle, Date taskUpdatedDate, Date taskDate) {
+    public TaskModel(String taskDescription, String taskTitle, Date taskDate) {
         this.taskDescription = taskDescription;
         this.taskTitle = taskTitle;
-        this.taskUpdatedDate = taskUpdatedDate;
         this.taskDate = taskDate;
     }
 
@@ -90,6 +94,24 @@ public class TaskModel {
         this.taskDescription = taskDescription;
     }
 
+    public TaskModel(int taskNumber, Date taskAddedDate, Date taskDate, Date taskUpdatedDate, String taskTitle, String taskDescription) {
+        this.taskNumber = taskNumber;
+        this.taskAddedDate = taskAddedDate;
+        this.taskDate = taskDate;
+        this.taskUpdatedDate = taskUpdatedDate;
+        this.taskTitle = taskTitle;
+        this.taskDescription = taskDescription;
+    }
 
-
+    @Override
+    public String toString() {
+        return  "{"+
+                "taskNumber=" + taskNumber +
+                ", taskAddedDate=" + taskAddedDate +
+                ", taskDate=" + taskDate +
+                ", taskUpdatedDate=" + taskUpdatedDate +
+                ", taskTitle='" + taskTitle + '\'' +
+                ", taskDescription='" + taskDescription + '\'' +
+                '}';
+    }
 }
